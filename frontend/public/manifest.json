@@ -1,0 +1,22 @@
+{
+  "name": "Book2Podcast",
+  "short_name": "书本播客",
+  "description": "将书本转化为双人对谈播客，随时随地在手机上收听",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#18181b",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
