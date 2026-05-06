@@ -1,0 +1,6 @@
+uploads/*
+audio/*
+__pycache__
+*.db
+.env
+.git

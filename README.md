@@ -20,62 +20,38 @@
 
 ## 快速开始
 
-### 1. 环境要求
+### 方式一：一键启动（推荐 Windows 用户）
 
-- Python 3.10+
-- Node.js 18+
-- (Windows 用户需确保 `python` 和 `node` 已加入 PATH)
+1. 安装 [Python 3.10+](https://python.org) 和 [Node.js 18+](https://nodejs.org)
+2. 双击项目根目录 `start.bat`
+3. 首次运行会自动安装依赖、提示配置 API Key、启动服务并打开浏览器
 
-### 2. 安装后端依赖
-
-```bash
-cd backend
-pip install -r requirements.txt
-```
-
-### 3. 配置 DeepSeek API Key
-
-在 `backend/` 目录下复制 `.env.example` 为 `.env`，填入你的 API Key：
+### 方式二：Docker Compose（最简）
 
 ```bash
-cp .env.example .env
+# 设置 API Key 环境变量
+set DEEPSEEK_API_KEY=你的Key   # Windows
+export DEEPSEEK_API_KEY=你的Key  # macOS/Linux
+
+docker-compose up
 ```
 
-编辑 `.env`：
-```
-DEEPSEEK_API_KEY=你的DeepSeek_API_Key
-```
+浏览器打开 `http://localhost:3000`
 
-> 获取 API Key：[platform.deepseek.com](https://platform.deepseek.com)
+### 方式三：手动启动
 
-### 4. 安装前端依赖
-
-```bash
-cd frontend
-npm install
-```
-
-### 5. 启动服务
-
-**Windows：** 双击项目根目录下的 `start_backend.bat` 和 `start_frontend.bat`
-
-**macOS/Linux：**
 ```bash
 # 终端1 - 后端
-cd backend && python -m uvicorn main:app --host 0.0.0.0 --port 8000
+cd backend
+pip install -r requirements.txt
+cp .env.example .env  # 编辑填入 DeepSeek API Key
+python -m uvicorn main:app --host 0.0.0.0 --port 8000
 
 # 终端2 - 前端
-cd frontend && npm run dev
+cd frontend
+npm install
+npm run dev
 ```
-
-### 6. 使用
-
-1. 浏览器打开 `http://localhost:3000`
-2. 上传 PDF 或 TXT 文件
-3. 进入书本详情页，点击「生成播客」
-4. 等待生成完成后，点击章节播放
-
-移动端访问：手机浏览器打开 `http://<电脑IP>:3000`
 
 ## 语音优化
 
